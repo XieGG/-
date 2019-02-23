@@ -1,0 +1,9 @@
+auth_homepage:
+    path:     /
+    defaults: { _controller: AuthBundle:Default:index }
+auth_login_index:
+    path:     /login
+    defaults: { _controller: AuthBundle:Login:index }
+auth_login_check:
+    path:     /login/check
+    defaults: { _controller: AuthBundle:Login:check }

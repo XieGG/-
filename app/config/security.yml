@@ -1,0 +1,53 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    encoders:
+        RbacBundle\Entity\User:
+            algorithm: bcrypt
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        database_admin_users:
+            entity:
+                class: RbacBundle:User
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+#        main:
+#            anonymous: ~
+#            # activate different ways to authenticate
+#
+#            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+#            #http_basic: ~
+#
+#            # https://symfony.com/doc/current/security/form_login_setup.html
+#            #form_login: ~
+
+        admin_firewalls:
+            pattern:   ^/admin
+            anonymous: ~
+            provider: database_admin_users
+#            guard:
+#                authenticators:
+#                    - auth.admin_form_login_authenticator
+            form_login:
+                login_path: auth_login_index
+                check_path: auth_login_check
+                default_target_path: /admin
+                username_parameter: _username
+                password_parameter: _password
+                failure_path: auth_login_index
+#            logout:
+#                handlers: [rbac.logout_handler]
+#                path: admin_login_logout
+#                target: admin_login_index
+
+    access_control:
+        - { path: ^/admin/auth/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/auth/logout, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/auth/check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+
