@@ -17,7 +17,7 @@ class appDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         $this->context = $context;
         $this->logger = $logger;
         if (null === self::$declaredRoutes) {
-            self::$declaredRoutes = array(
+            self::$declaredRoutes = [
         '_wdt' => array (  0 =>   array (    0 => 'token',  ),  1 =>   array (    '_controller' => 'web_profiler.controller.profiler:toolbarAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'token',    ),    1 =>     array (      0 => 'text',      1 => '/_wdt',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         '_profiler_home' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'web_profiler.controller.profiler:homeAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/_profiler/',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         '_profiler_search' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'web_profiler.controller.profiler:searchAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/_profiler/search',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
@@ -35,11 +35,11 @@ class appDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'auth_login_index' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AuthBundle\\Controller\\LoginController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/admin/auth/login',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'auth_login_check' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AuthBundle\\Controller\\LoginController::checkAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/admin/auth/login/check',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'homepage' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
-    );
+    ];
         }
     }
 
-    public function generate($name, $parameters = array(), $referenceType = self::ABSOLUTE_PATH)
+    public function generate($name, $parameters = [], $referenceType = self::ABSOLUTE_PATH)
     {
         if (!isset(self::$declaredRoutes[$name])) {
             throw new RouteNotFoundException(sprintf('Unable to generate a URL for the named route "%s" as such route does not exist.', $name));
