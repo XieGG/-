@@ -67,3 +67,8 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+kit_crypt:
+    method: 'AES-256-CBC'
+    secret_key: 'ThisIsSecret'
+    secret_iv: '1234567890abcdef'

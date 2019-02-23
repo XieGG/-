@@ -62,6 +62,9 @@ class ComposerStaticInitcf70a142d2d991d5797f59f6c1b4139d
         'K' => 
         array (
             'Knp\\Bundle\\PaginatorBundle\\' => 27,
+            'Kit\\GeneratorBundle\\' => 20,
+            'Kit\\FormBundle\\' => 15,
+            'Kit\\CryptBundle\\' => 16,
         ),
         'I' => 
         array (
@@ -203,6 +206,18 @@ class ComposerStaticInitcf70a142d2d991d5797f59f6c1b4139d
         'Knp\\Bundle\\PaginatorBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle',
+        ),
+        'Kit\\GeneratorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kitlabs/kit-generator-bundle',
+        ),
+        'Kit\\FormBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kitlabs/kit-form-bundle',
+        ),
+        'Kit\\CryptBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kitlabs/kit-crypt-bundle',
         ),
         'Incenteev\\ParameterHandler\\' => 
         array (

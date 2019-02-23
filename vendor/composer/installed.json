@@ -1016,6 +1016,158 @@
         ]
     },
     {
+        "name": "kitlabs/kit-crypt-bundle",
+        "version": "v0.1.2",
+        "version_normalized": "0.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kitlabs-cn/KitCryptBundle.git",
+            "reference": "0c8ed0d729bd75cc7c99c0244bdec5026c54dd8d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kitlabs-cn/KitCryptBundle/zipball/0c8ed0d729bd75cc7c99c0244bdec5026c54dd8d",
+            "reference": "0c8ed0d729bd75cc7c99c0244bdec5026c54dd8d",
+            "shasum": ""
+        },
+        "require": {
+            "ext-openssl": "*",
+            "php": ">=5.5.9"
+        },
+        "time": "2017-09-29T06:42:58+00:00",
+        "type": "symfony-bundle",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Kit\\CryptBundle\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "lcp0578",
+                "email": "lcp0578@gmail.com",
+                "homepage": "https://github.com/lcp0578"
+            },
+            {
+                "name": "The contributors",
+                "homepage": "https://github.com/kitlabs-cn/KitCryptBundle/contributors"
+            }
+        ],
+        "description": "Symfony Crypt Bundle",
+        "homepage": "https://github.com/kitlabs-cn/KitCryptBundle",
+        "keywords": [
+            "OPNESSL",
+            "aes",
+            "crypt bundle",
+            "des"
+        ]
+    },
+    {
+        "name": "kitlabs/kit-form-bundle",
+        "version": "v0.1.4",
+        "version_normalized": "0.1.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kitlabs-cn/KitFormBundle.git",
+            "reference": "0a65e931e5adc693df8d65f9e2a6dae1716a2dae"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kitlabs-cn/KitFormBundle/zipball/0a65e931e5adc693df8d65f9e2a6dae1716a2dae",
+            "reference": "0a65e931e5adc693df8d65f9e2a6dae1716a2dae",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "time": "2018-09-04T01:52:06+00:00",
+        "type": "symfony-bundle",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Kit\\FormBundle\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "lcp0578",
+                "email": "lcp0578@gmail.com",
+                "homepage": "https://github.com/lcp0578"
+            },
+            {
+                "name": "The contributors",
+                "homepage": "https://github.com/kitlabs-cn/KitFormBundle/contributors"
+            }
+        ],
+        "description": "Easily use UEditor, UMEditor, laydate in Symfony",
+        "homepage": "https://github.com/kitlabs-cn/KitFormBundle",
+        "keywords": [
+            "form bundle",
+            "laydate",
+            "ueditor",
+            "umeditor"
+        ]
+    },
+    {
+        "name": "kitlabs/kit-generator-bundle",
+        "version": "v0.4.4",
+        "version_normalized": "0.4.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kitlabs-cn/KitGeneratorBundle.git",
+            "reference": "019de8d6aec839128f1090340a1a5a87f6ae8986"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kitlabs-cn/KitGeneratorBundle/zipball/019de8d6aec839128f1090340a1a5a87f6ae8986",
+            "reference": "019de8d6aec839128f1090340a1a5a87f6ae8986",
+            "shasum": ""
+        },
+        "require": {
+            "knplabs/knp-paginator-bundle": "^2.8",
+            "php": ">=5.5.9",
+            "sensio/generator-bundle": ">=v3.0"
+        },
+        "time": "2018-12-09T11:22:22+00:00",
+        "type": "symfony-bundle",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Kit\\GeneratorBundle\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "lcp0578",
+                "email": "lcp0578@gmail.com",
+                "homepage": "https://github.com/lcp0578"
+            },
+            {
+                "name": "The contributors",
+                "homepage": "https://github.com/kitlabs-cn/KitGeneratorBundle/contributors"
+            }
+        ],
+        "description": "extend SensioGeneratorBundle",
+        "homepage": "https://github.com/kitlabs-cn/KitGeneratorBundle",
+        "keywords": [
+            "Generator Bundle",
+            "generate crud",
+            "generate form"
+        ]
+    },
+    {
         "name": "knplabs/knp-components",
         "version": "v1.3.10",
         "version_normalized": "1.3.10.0",

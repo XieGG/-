@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e59f61dbde9c9dea71b26f599d688a31",
+    "content-hash": "e3bc8aca5150493ce580be93caba3e53",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -993,6 +993,152 @@
             "time": "2014-01-12T16:20:24+00:00"
         },
         {
+            "name": "kitlabs/kit-crypt-bundle",
+            "version": "v0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kitlabs-cn/KitCryptBundle.git",
+                "reference": "0c8ed0d729bd75cc7c99c0244bdec5026c54dd8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kitlabs-cn/KitCryptBundle/zipball/0c8ed0d729bd75cc7c99c0244bdec5026c54dd8d",
+                "reference": "0c8ed0d729bd75cc7c99c0244bdec5026c54dd8d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "php": ">=5.5.9"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Kit\\CryptBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "lcp0578",
+                    "email": "lcp0578@gmail.com",
+                    "homepage": "https://github.com/lcp0578"
+                },
+                {
+                    "name": "The contributors",
+                    "homepage": "https://github.com/kitlabs-cn/KitCryptBundle/contributors"
+                }
+            ],
+            "description": "Symfony Crypt Bundle",
+            "homepage": "https://github.com/kitlabs-cn/KitCryptBundle",
+            "keywords": [
+                "OPNESSL",
+                "aes",
+                "crypt bundle",
+                "des"
+            ],
+            "time": "2017-09-29T06:42:58+00:00"
+        },
+        {
+            "name": "kitlabs/kit-form-bundle",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kitlabs-cn/KitFormBundle.git",
+                "reference": "0a65e931e5adc693df8d65f9e2a6dae1716a2dae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kitlabs-cn/KitFormBundle/zipball/0a65e931e5adc693df8d65f9e2a6dae1716a2dae",
+                "reference": "0a65e931e5adc693df8d65f9e2a6dae1716a2dae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Kit\\FormBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "lcp0578",
+                    "email": "lcp0578@gmail.com",
+                    "homepage": "https://github.com/lcp0578"
+                },
+                {
+                    "name": "The contributors",
+                    "homepage": "https://github.com/kitlabs-cn/KitFormBundle/contributors"
+                }
+            ],
+            "description": "Easily use UEditor, UMEditor, laydate in Symfony",
+            "homepage": "https://github.com/kitlabs-cn/KitFormBundle",
+            "keywords": [
+                "form bundle",
+                "laydate",
+                "ueditor",
+                "umeditor"
+            ],
+            "time": "2018-09-04T01:52:06+00:00"
+        },
+        {
+            "name": "kitlabs/kit-generator-bundle",
+            "version": "v0.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kitlabs-cn/KitGeneratorBundle.git",
+                "reference": "019de8d6aec839128f1090340a1a5a87f6ae8986"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kitlabs-cn/KitGeneratorBundle/zipball/019de8d6aec839128f1090340a1a5a87f6ae8986",
+                "reference": "019de8d6aec839128f1090340a1a5a87f6ae8986",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-paginator-bundle": "^2.8",
+                "php": ">=5.5.9",
+                "sensio/generator-bundle": ">=v3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Kit\\GeneratorBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "lcp0578",
+                    "email": "lcp0578@gmail.com",
+                    "homepage": "https://github.com/lcp0578"
+                },
+                {
+                    "name": "The contributors",
+                    "homepage": "https://github.com/kitlabs-cn/KitGeneratorBundle/contributors"
+                }
+            ],
+            "description": "extend SensioGeneratorBundle",
+            "homepage": "https://github.com/kitlabs-cn/KitGeneratorBundle",
+            "keywords": [
+                "Generator Bundle",
+                "generate crud",
+                "generate form"
+            ],
+            "time": "2018-12-09T11:22:22+00:00"
+        },
+        {
             "name": "knplabs/knp-components",
             "version": "v1.3.10",
             "source": {
@@ -1608,6 +1754,60 @@
                 "controllers"
             ],
             "time": "2018-12-11T16:59:23+00:00"
+        },
+        {
+            "name": "sensio/generator-bundle",
+            "version": "v3.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
+                "reference": "28cbaa244bd0816fd8908b93f90380bcd7b67a65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/28cbaa244bd0816fd8908b93f90380bcd7b67a65",
+                "reference": "28cbaa244bd0816fd8908b93f90380bcd7b67a65",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/console": "~2.7|~3.0",
+                "symfony/framework-bundle": "~2.7|~3.0",
+                "symfony/process": "~2.7|~3.0",
+                "symfony/yaml": "~2.7|~3.0",
+                "twig/twig": "^1.28.2|^2.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "~2.4",
+                "symfony/doctrine-bridge": "~2.7|~3.0",
+                "symfony/filesystem": "~2.7|~3.0",
+                "symfony/phpunit-bridge": "^3.3"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sensio\\Bundle\\GeneratorBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "This bundle generates code for you",
+            "time": "2017-12-07T15:36:41+00:00"
         },
         {
             "name": "sensiolabs/security-checker",
@@ -2452,60 +2652,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "sensio/generator-bundle",
-            "version": "v3.1.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "28cbaa244bd0816fd8908b93f90380bcd7b67a65"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/28cbaa244bd0816fd8908b93f90380bcd7b67a65",
-                "reference": "28cbaa244bd0816fd8908b93f90380bcd7b67a65",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/console": "~2.7|~3.0",
-                "symfony/framework-bundle": "~2.7|~3.0",
-                "symfony/process": "~2.7|~3.0",
-                "symfony/yaml": "~2.7|~3.0",
-                "twig/twig": "^1.28.2|^2.0"
-            },
-            "require-dev": {
-                "doctrine/orm": "~2.4",
-                "symfony/doctrine-bridge": "~2.7|~3.0",
-                "symfony/filesystem": "~2.7|~3.0",
-                "symfony/phpunit-bridge": "^3.3"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Sensio\\Bundle\\GeneratorBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "This bundle generates code for you",
-            "time": "2017-12-07T15:36:41+00:00"
-        },
         {
             "name": "symfony/phpunit-bridge",
             "version": "v3.4.22",
