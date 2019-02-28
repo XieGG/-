@@ -125,66 +125,6 @@ class User implements UserInterface
      * @ORM\JoinColumn(name="ROLEID", referencedColumnName="id", onDelete="CASCADE")
      */
     private $gROUP;
-    
-//    /**
-//     * @var string
-//     *
-//     * @ORM\Column(name="JZJGSZDSSFJ", type="string", length=18,options={"comment":"矫正机关所在地市司法局（单位编码）"})
-//     * @Assert\NotBlank(message="所在地市司法局不能为空")
-//     */
-//    private $jZJGSZDSSFJ;
-//
-//    /**
-//     * @var string
-//     *
-//     * @ORM\Column(name="JZJGSZDSSFJMC", type="string", length=60,options={"comment":"矫正机关所在地市司法局名称"})
-//     *
-//     */
-//    private $jZJGSZDSSFJMC;
-//
-//    /**
-//     * @var string
-//     *
-//     * @ORM\Column(name="JZJGSZQXSFJ", type="string", length=18,options={"comment":"矫正机关所在区县司法局（单位编码）"})
-//     * @Assert\NotBlank(message="所在区县司法局不能为空")
-//     */
-//    private $jZJGSZQXSFJ;
-//
-//    /**
-//     * @var string
-//     *
-//     * @ORM\Column(name="JZJGSZQXSFJMC", type="string", length=60,options={"comment":"矫正机关所在地区县司法局名称"})
-//     */
-//    private $jZJGSZQXSFJMC;
-//
-//    /**
-//     * @var string
-//     *
-//     * @ORM\Column(name="JZJGSZSFS", type="string", length=18,options={"comment":"矫正机关所在司法所（单位编码）"})
-//     * @Assert\NotBlank(message="所在司法所不能为空")
-//     */
-//    private $jZJGSZSFS;
-//
-//    /**
-//     * @var string
-//     *
-//     * @ORM\Column(name="JZJGSZSFSMC", type="string", length=60,options={"comment":"矫正机关所在司法所名称"})
-//     */
-//    private $jZJGSZSFSMC;
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="CITY", type="string", length=255,nullable=true,options={"comment":"司法机构所在市"})
-     *
-     */
-
-    private $cITY;
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="AREA", type="string", length=10,nullable=true,options={"comment":"司法机构所在区县"})
-     */
-    private $aREA;
     /**
      * Get role
      *
@@ -669,53 +609,5 @@ class User implements UserInterface
         $this->pASSWORD = $pASSWORD;
 
         return $this;
-    }
-
-    /**
-     * Set cITY.
-     *
-     * @param string|null $cITY
-     *
-     * @return User
-     */
-    public function setCITY($cITY = null)
-    {
-        $this->cITY = $cITY;
-
-        return $this;
-    }
-
-    /**
-     * Get cITY.
-     *
-     * @return string|null
-     */
-    public function getCITY()
-    {
-        return $this->cITY;
-    }
-
-    /**
-     * Set aREA.
-     *
-     * @param string|null $aREA
-     *
-     * @return User
-     */
-    public function setAREA($aREA = null)
-    {
-        $this->aREA = $aREA;
-
-        return $this;
-    }
-
-    /**
-     * Get aREA.
-     *
-     * @return string|null
-     */
-    public function getAREA()
-    {
-        return $this->aREA;
     }
 }
