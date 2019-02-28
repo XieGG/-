@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'form_theme_pintuer.html.twig' %}
+{% block css %}
+<style>
+.checkbox_area .checkbox {
+	float: left;
+}
+</style>
+{% endblock %}
+{% block body %}
+<h2 style="text-align: center; margin-bottom: 15px;">添加角色组</h2>
+{{ form_errors_tips(errors)|raw }}
+{{ form(form,{attr : {class : 'form-x'}}) }}
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+	$(function(){
+		if($('#role_level').val() != 2){
+			$('.checkbox_area').parent().hide();
+		}
+        if($('#role_level').val() != 3){
+            $('.checkbox_sort').parent().hide();
+        }
+	})
+	$('#role_level').on('change', function(){
+		levelId = $(this).val();
+		// if(levelId == 2){
+		// 	$('.checkbox_area').parent().show();
+		// }else{
+		// 	$('.checkbox_area').parent().hide();
+		// }
+		if (levelId == 3){
+            $('.checkbox_sort').parent().show();
+        }else{
+            $('.checkbox_sort').parent().hide();
+        }
+	});
+</script>
+{% endblock %}

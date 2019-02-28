@@ -1,0 +1,7 @@
+services:
+#    kit_rbac.example:
+#        class: RbacBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    rbac.logout_handler:
+        class: RbacBundle\Service\LogoutHandler
+        arguments: ["@logger"]

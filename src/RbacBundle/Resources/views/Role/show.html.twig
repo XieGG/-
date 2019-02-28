@@ -1,0 +1,23 @@
+{% extends 'admin/layout.html.twig'%} 
+{% block body %}
+{% if role is defined and role is not empty %}
+<table class="layui-table">
+  <tr>
+    <th>组名称</th>
+    <td>{{ role.rolename }}</td>
+  </tr>
+  <tr>
+    <th>备注</th>
+    <td>{{ role.note }}</td>
+  </tr>
+  <tr>
+    <th>ip</th>
+    <td>{{ role.ip }}</td>
+  </tr>
+  <tr>
+    <th>创建时间</th>
+    <td>{{ role.createAt|date() }}</td>
+  </tr>
+</table>
+{% endif %}
+{% endblock %}

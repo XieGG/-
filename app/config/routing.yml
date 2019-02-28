@@ -6,6 +6,14 @@ auth:
     resource: "@AuthBundle/Resources/config/routing.yml"
     prefix:   /admin/auth
 
+rabc:
+    resource: "@RbacBundle/Resources/config/routing.yml"
+    prefix:   /admin/rbac
+
+base:
+  resource: "@BaseBundle/Resources/config/routing.yml"
+  prefix:   /base
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

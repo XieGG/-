@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div style="margin-left: 4px;">
+    {% if pagination is defined and pagination is not empty %}
+    <table class="table table-striped">
+        <tr class="current">
+            <th>角色组名称</th>
+            <th>角色组状态</th>
+            <th>角色组等级</th>
+            <th>角色组备注</th>
+            <th>添加时间</th>
+            <th style="min-width: 140px;">操作</th>
+        </tr>
+        {% for item in pagination %}
+        <tr>
+            <td>{{ item.rolename }}</td>
+            <td>{% if item.status == 1 %}<span style="color:green">启用</font>{% else %}<span style="color:red">禁用</font>{% endif %}</td>
+            <td>{{ item.level|default('')|replace({'0':'系统超级管理员','1':'省级','2':'省级（按地市）','3':'市级','4':'县区级'}) }}</td>
+            <td>{{ item.note }}</td>
+            <td>{{ item.createAt|date('Y-m-d H:i:s') }}</td>
+            <td>
+                <a href="{{ path('rbac_role_set',{id:item.id}) }}" class="button bg-blue radius-rounded">设置权限</a>
+                <a href="{{ path('rbac_role_edit',{id:item.id}) }}" class="button bg-yellow radius-rounded">编辑</a>
+                <a href="{{ path('rbac_role_delete',{id:item.id}) }}" class="button bg-red radius-rounded">删除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+        {{ knp_pagination_render(pagination) }}
+    {% endif %}
+</div>
+{% endblock %}
+{% block javascripts %} {{ parent() }}
+<script>
+   function delItem(id){
+	   layer.confirm('确定要删除？', {
+		   btn: ['确定','取消'] //按钮
+		 }, function(){
+			 var index = layer.load(1, {
+				  shade: [0.1,'#fff'] //0.1透明度的白色背景
+				});
+			  $.post("{{ path('rbac_role_delete') }}", { id: id },
+			   function(data){
+			     if(data.status == 1){
+				     $('#item_'+id).hide();
+// 				     layer.close(index);
+				     layer.msg(data.msg, {icon: 1});
+				     }else{
+					     layer.msg(data.msg, {icon: 2});}
+			   }, "json");
+		 }, function(){
+		  
+		 });
+	  
+	}
+</script>
+{% endblock %}

@@ -1,0 +1,218 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% if app.request.get('_route') == 'rbac_user_edit' %}
+    <h2 style="text-align:center;margin-bottom:15px;">编辑用户</h2>
+    {% else %}
+    <h2 style="text-align:center;margin-bottom:15px;">添加用户</h2>
+    {% endif %}
+    {{ form_errors_tips(errors)|raw }}
+    <form class="form-x" method="post" action="" style="width:80%">
+    
+        <div class="form-group">
+    		<div class="label">
+    			<label for="username">
+    				账号</label>
+    		</div>
+    		<div class="field">
+    			<input type="text" class="input" id="username" name="user[uSERNAME]" size="11"   value="{{ user.uSERNAME|default('') }}" />
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="label">
+    			<label for="password">
+    				密码</label>
+    		</div>
+    		<div class="field">
+    			<input type="password" class="input" id="password" name="user[pASSWORD]" size="30" placeholder="请输入密码" />
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="label">
+    			<label for="xM">
+    				真实姓名</label>
+    		</div>
+    		<div class="field">
+    			<input type="text" class="input" id="xM" name="user[xM]" size="30" data-validate="required:必填 " placeholder="请输写真实姓名" value="{{ user.xM|default('') }}" />
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="label">
+    			<label for="rOLE">
+    				角色组</label>
+    		</div>
+    		<div class="field">
+                {% if roles is defined and roles is not empty %}
+                <select class="input" data-validate="required:请选择角色组" name="user[rOLEID]" id="rOLEID">
+                    <option>请选择角色组</option>
+                    {% for role in roles %}
+                        <option value="{{ role.id }}" id="{{ role.level }}" class="roleids" {% if user is not empty and user.rOLEID == role.id %} selected{% endif %} >{{ role.rolename }}</option>
+                    {% endfor %}
+                </select>
+                {% endif %}
+    		</div>
+    	</div>
+		<input type="hidden" name="user[lEVEL]" value="" id="level">
+		<div class="form-group checkbox" style="display: none" id="city">
+			<div class="label">
+				<label class="control-label required">
+					负责地市</label>
+			</div>
+			{% set area = getAreaLevel(2) %}
+            {% for item in area %}
+				<div id="role_area" class="checkbox_area" style="display: inline-block">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="role_area_0" name="user[city][]" class="checkbox_float" value="{{ item.areacode }}">{{ item.areaname }}
+						</label>
+					</div>
+				</div>
+            {% endfor %}
+			<div id="role_area" class="checkbox_area" style="display: inline-block">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" id="role_area_0" name="user[city][]" class="checkbox_float" value="140000">省厅
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group" style="display: none;" id="city_select">
+			<div class="label">
+				<label class="control-label required">
+					选择市/区/县</label>
+				</div>
+				<div class="county"  >
+					<select id="prov" name="" class="input"  style="display: inline-block;width: 60px;" >
+						<option value="140000">山西省</option>
+					</select>
+					<select id="citys" name="user[citys]" class="input" style="display: inline-block;width: 60px;border-bottom: 1px solid black" >
+						<option value="">请选择</option>
+					</select>
+					<select  id="areas" name="user[areas]" class="input" style="display: none;width: 80px;border-bottom: 1px solid black"  >
+						<option value="">请选择</option>
+					</select>
+				</div>
+		</div>
+    	<div class="form-group">
+    		<div class="label">
+    			<label>
+    				状态</label>
+    		</div>
+    		<div class="field">
+    			<div class="button-group radio">
+    					<input name="user[sTATUS]" value="1" checked="checked" type="radio"> 启用
+    					<input name="user[sTATUS]" value="0" type="radio"> 禁用
+    			</div>
+    		</div>
+    	</div>
+    	{#<div class="form-group">#}
+    		{#<div class="label">#}
+    			{#<label for="jZJGSZDSSFJ">#}
+    				{#所在地市</label>#}
+    		{#</div>#}
+    		{#<div class="field">#}
+    			{#<select id="jZJGSZDSSFJ" class="input" name="user[city]">#}
+						{#{% for vo in cities %}#}
+							{#<option value="{{ vo.areacode }}">{{ vo.areaname }}</option>#}
+						{#{% endfor %}#}
+				{#</select>#}
+    		{#</div>#}
+    	{#</div>#}
+    	<div class="form-button">
+    		<input class="button" type="submit" name="submit" value="提交">
+    	</div>
+
+    </form>
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{{ asset(theme('js/jquery-1.8.3.min.js')) }}"></script>
+
+	<script>
+
+        $(function(){
+            $('#prov').trigger('change');
+        })
+        $("#prov").on('change',function(){
+            code = $(this).val();
+            $.post("{{ path('web_ajax_areacode') }}",{areacode:code},function(result)
+            {
+                console.log(result)
+                if(result.code == 1)
+                {
+                    $('#citys option').remove();
+                    $('#areas option').remove();
+                    $("#citys").append(result.data);
+                    $('#citys').trigger('change');
+                }
+            })
+        })
+        $("#citys").on('change',function(){
+            code = $(this).val();
+            $.post("{{ path('web_ajax_areacode') }}",{areacode:code},function(result)
+            {
+                if(result.code == 1)
+                {
+                    $('#areas option').remove();
+                    $("#areas").append(result.data);
+                }
+            })
+        })
+	</script>
+{#<script>#}
+{#$(function(){#}
+{#$('#jZJGSZDSSFJ').trigger('change');#}
+{#});#}
+{#//获取县司法局#}
+{#$('#jZJGSZDSSFJ').on('change',function(){#}
+	{#var code = $(this).val();#}
+	{#$.post("{{ path('base_getinformation_searchJGBM') }}",{bm:code,data:'{% if user is defined and user is not empty %}{{ user.jZJGSZQXSFJ }}{% endif %}'},#}
+		{#function(result){#}
+			{#if(result.code == '1'){#}
+				{#$('#jZJGSZQXSFJ option').remove();#}
+				{#$('#jZJGSZSFS option').remove();#}
+				{#$('#jZJGSZQXSFJ').append(result.data);#}
+				{#$('#jZJGSZQXSFJ').trigger('change');#}
+			{#}#}
+		{#}#}
+	{#)#}
+{#})#}
+{#//获取司法所#}
+{#$('#jZJGSZQXSFJ').on('change',function(){#}
+	{#var code = $(this).val();#}
+	{#$.post("{{ path('base_getinformation_searchJGBM') }}",{bm:code,data:'{% if user is defined and user is not empty %}{{ user.jZJGSZSFS }}{% endif %}'},#}
+		{#function(result){#}
+			{#if(result.code == '1'){#}
+				{#$('#jZJGSZSFS option').remove();#}
+				{#$('#jZJGSZSFS').append(result.data);#}
+			{#}#}
+		{#}#}
+	{#)#}
+{#})#}
+{#</script>#}
+
+<script type="text/javascript">
+	$('#rOLEID').on('change', function(){
+		level = $('#rOLEID option:checked').attr('id')
+		$('#level').attr('value',level)
+		if(level == 2){
+			$('#city').show();
+		}else{
+			$('#city').hide();
+		}
+        if(level == 3 || level == 4){
+            $('#city_select').show();
+            if (level == 4){
+                $('#areas').show();
+                $('#areas').css('display','inline-block');
+			}else{
+                $('#areas').hide();
+                $('#areas').css('display','none');
+			}
+		}else{
+            $('#city_select').hide();
+		}
+
+	});
+</script>
+
+
+{% endblock %}

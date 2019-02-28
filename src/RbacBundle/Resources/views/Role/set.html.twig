@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %} {% block css %}
+<link rel="stylesheet" type="text/css"
+	href="{{ asset_kit('static/css/SystemSetup.css') }}" />
+{% endblock %} {% block body %}
+<div class="qd_header">
+	<img src="{{ asset_kit('public/img/gztz_newword.png') }}" /><br />
+	<div class="title_">
+		<span>设置权限</span>
+	</div>
+</div>
+<div id="Printing_box" class="insert_box">
+	<form action="" method="post" class="form">
+		<div class="form-group">
+			<div class="label">
+				<label for="username"> 用户组</label>
+			</div>
+			<div class="field">
+				<input type="text" class="input" id="username" name="username"
+					size="30" placeholder="" disabled value="{{ role.roleName }}" />
+			</div>
+		</div>
+		<div class="form-group">
+            <div class="label">
+            	<label for="username"> 选择权限组</label>
+            </div>
+			<div class="field" style="margin-left:40px;">
+                <div class="" style="padding: 7px 0px;">
+    				<label ><input type="checkbox" class="whole"/>全选</label>
+    			</div>
+    			{% if menuList is defined and menuList is not empty %}
+        		{% for menuOne in menuList if menuOne.level == 1 %}
+    			<div class="label">
+    				<strong>{{ menuOne.name }}</strong>
+    			</div>
+    			<div class="field w_field">
+                    {% if menuList is defined and menuList is not empty %}
+    	            {% for menuTwo in menuList if menuTwo.level == 2 and menuTwo.parentNode == menuOne.node %}
+					<p class="margin-none text-blue">
+						<label>
+							<input class="TotalSelection" name="nodes[]" type="checkbox" value="{{ menuTwo.node }}" {% if role.nodes is not empty and menuTwo.node in role.nodes %} checked{% endif %}>{{ menuTwo.name }}
+						</label>
+						<span class="text-yellow">（已选<font class="num_s">0</font>个功能）</span>
+					</p>
+					<div class="check_box">
+                        {% if menuList is defined and menuList is not empty %}
+        	            {% for menuTh in menuList if menuTh.level == 3 and menuTh.parentNode == menuTwo.node %}
+        	            <label>
+        				    <input name="nodes[]" type="checkbox" value="{{ menuTh.node }}" {% if role.nodes is not empty and menuTh.node in role.nodes %} checked{% endif %}>{{ menuTh.name }}
+        				</label>
+        			    {% endfor %}
+        			    {% endif %}
+						
+					</div>
+					{% endfor %}
+    			    {% endif %}
+				</div>
+        		{% endfor %}
+        		{% endif %}
+    		</div>
+		</div>
+		<div style="text-align: center;">
+			<input type="submit" class="button bg-sub radius-rounded"
+				style="width: 88px;" name="submit" value=" 提交" />
+		</div>
+	</form>
+</div>
+{% endblock %}
+{% block js %}
+<script type="text/javascript">
+	var Tselect = $(".TotalSelection");
+	var Dselect = $(".check_box input[type=checkbox]");
+	Tselect.on("click", function() {
+		var Tselect1 = $(this).parent().parent().next().find("input[type=checkbox]");
+		var Tselect_num_s = $(this).parent().parent().find(".num_s");
+		this.checked ? Tselect1.prop("checked", true) : Tselect1.prop("checked", false);
+		this.checked ? Tselect_num_s.text(Tselect1.length) : Tselect_num_s.text(0);
+	})
+	$(".check_box input[type=checkbox]").on("click", function() {
+		var Dselect1 = $(this).parent().parent().find("input[type=checkbox]");
+		var Dselect_num_s = $(this).parent().parent().prev().find(".num_s");
+		var Dselect_qx = $(this).parent().parent().prev().find("input[type=checkbox]");
+		//console.log(Dselect1);
+		var TTt = 0;
+
+		for(var i = 0; i < Dselect1.length; i++) {
+
+			if(Dselect1[i].checked) {
+				TTt++;
+			}
+		}
+		Dselect_num_s.text(TTt);
+		TTt == Dselect1.length ? Dselect_qx.prop("checked", true) : Dselect_qx.prop("checked", false);
+	})
+	$(".whole").on("click",function(){
+		var Tselect2 = $(".w_field").find("input[type=checkbox]");
+		var Tselect3 = $(".w_field");
+		this.checked ? Tselect2.prop("checked", true) : Tselect2.prop("checked", false);
+		if (this.checked) {
+			for (var i = 0; i < Tselect3.length; i++) {
+				var len=Tselect3.eq(i).find(".check_box input[type=checkbox]").length;
+				Tselect3.eq(i).find(".num_s").text(len);
+			}
+		} else{
+			for (var i = 0; i < Tselect3.length; i++) {
+				var len=Tselect3.eq(i).find(".check_box input[type=checkbox]").length;
+				Tselect3.eq(i).find(".num_s").text(0);
+			}
+		}
+		
+	})
+</script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'system/layout.html.twig'%} 
+{% block content %}
+{% if user is defined and user is not empty %}
+<table class="layui-table">
+  <tr>
+    <th>用户</th>
+    <td>{{ user.truename|default('') }}</td>
+  </tr>
+  <tr>
+    <th>用户组</th>
+    <td>{{ user.rolename|default('') }}</td>
+  </tr>
+  <tr>
+    <th>真实姓名</th>
+    <td>{{ user.truename|default('') }}</td>
+  </tr>
+  <tr>
+    <th>部门</th>
+    <td>{{ user.dname|default('') }}</td>
+  </tr>
+  <tr>
+    <th>职位</th>
+    <td>{{ user.rolename|default('') }}</td>
+  </tr>
+</table>
+{% endif %}
+
+{% endblock %}

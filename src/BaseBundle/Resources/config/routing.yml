@@ -1,0 +1,11 @@
+base_homepage:
+    path:     /
+    defaults: { _controller: "BaseBundle:Default:index" }
+
+base_uploadFile:
+    path:     /upload
+    defaults: { _controller: "BaseBundle:Base:upload" }
+
+base_getinformation:
+    resource: "@BaseBundle/Resources/config/routing/getinformation.yml"
+    prefix:   /getinformation

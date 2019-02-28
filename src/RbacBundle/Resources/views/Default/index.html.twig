@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+		<table class="table table-striped" lay-even>
+			<thead>
+    			<tr class="current">
+    				<th>姓名</th>
+    				<th>手机号</th>
+    				<th>状态</th>
+    				<th>添加时间</th>
+    				<th>修改时间</th>
+    				<th>操作</th>
+    			</tr>
+			</thead>
+  			<tbody>
+  			{% if pagination is defined and pagination is not empty %}
+    			{% for u in pagination %}
+        			<tr id="item_{{ u.id }}">
+        				<td>{{ u.xM|default('') }}</td>
+        				<td>{{ u.uSERNAME|default('') }}</td>
+        				<td>{{ u.status|default('')|replace({'0':'禁用','1':'启用'}) }}</td>
+        				<td>{{ u.cREATEAT|date('Y-m-d') }}</td>
+        				<td>{{ u.uPDATEAT|date('Y-m-d') }}</td>
+        				<td>
+        				<div class="layui-btn-group">
+                          <a href="{{ path('rbac_user_edit', { 'id': u.id }) }}" class="button bg-yellow radius-rounded">编辑</a>
+                          <button class="button bg-red radius-rounded" onclick="delItem({{ u.id }})"> 删除</button>
+        				</td>
+        			</tr>
+    			{% endfor %}
+			{% else %}
+			<tr>
+				<td>暂无记录</td>
+			</tr>
+			{% endif %}
+			</tbody>
+		</table>
+		{% if pagination is defined and pagination is not empty %}
+            {{ knp_pagination_render(pagination) }}
+		{% endif %}
+{% endblock %}
+{% block js %} {{ parent() }}
+<script>
+   function delItem(id){
+	   layer.confirm('确定要删除？', {
+		   btn: ['确定','取消'] //按钮
+		 }, function(){
+			 var index = layer.load(1, {
+				  shade: [0.1,'#fff'] //0.1透明度的白色背景
+				});
+			  $.post("{{ path('rbac_user_delete') }}", { id: id },
+			   function(data){
+			     layer.close(index);
+			     layer.msg(data.msg, {icon: 1}); 
+			     if(data.status == 1){
+				     $('#item_'+id).hide();
+				     }
+			   }, "json");
+		 }, function(){
+		  
+		 });
+	  
+	}
+</script>
+{% endblock %}

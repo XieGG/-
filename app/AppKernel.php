@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new AuthBundle\AuthBundle(),
             new AdminBundle\AdminBundle(),
+            new RbacBundle\RbacBundle(),
+            new BaseBundle\BaseBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Kit\FormBundle\KitFormBundle(),
             new Kit\CryptBundle\KitCryptBundle(),

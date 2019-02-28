@@ -1,0 +1,87 @@
+services:
+#    base.example:
+#        class: BaseBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    base.capital_naming_strategy:
+        class: BaseBundle\Service\CapitalNamingStrategy
+    base.update_submit_state:
+        class: BaseBundle\Service\UpdateSubmitStateService
+        arguments: ["@doctrine"]
+    base.form_errors_extension:
+        class: BaseBundle\Twig\FormErrorsExtension
+        tags:
+            - { name: twig.extension }
+    code.twig.extension:
+        class: BaseBundle\Twig\CodeExtension
+        arguments: ["@doctrine"]
+        tags:
+            - { name: twig.extension }
+    area.twig.extension:
+        class: BaseBundle\Twig\AreaExtension
+        arguments: ["@doctrine"]
+        tags:
+            - { name: twig.extension }
+    base.upload_file_service:
+        class: BaseBundle\Service\UploadFileService
+        arguments: ["%uploads_directory%","@filesystem", "@logger", "@base.image_service"]
+    adjust.twig.extension:
+        class: BaseBundle\Twig\AdjustPersonNameExtension
+        arguments: ["@doctrine"]
+        tags:
+            - { name: twig.extension }
+    base.uuid_service:
+        class: BaseBundle\Service\UuidService
+    base.base64_service:
+        class: BaseBundle\Service\Base64Service
+        arguments: ["%kernel.root_dir%"]
+    base.sms_service:
+        class: BaseBundle\Service\SmsService
+        arguments: ["@doctrine.orm.entity_manager","@service_container"]
+    base.ums_service:
+        class: BaseBundle\Service\UmsService
+        arguments: ["@doctrine.orm.entity_manager","@service_container"]
+    base.update_areaid_service:
+        class: BaseBundle\Service\UpdateAreaIDService
+        arguments: ["@doctrine","@doctrine.orm.entity_manager"]
+    base.update_zm_service:
+        class: BaseBundle\Service\UpdateZMService
+        arguments: ["@doctrine","@doctrine.orm.entity_manager"]
+    base.insert_notice_service:
+        class: BaseBundle\Service\InsertNoticeInfoService
+        arguments: ["@doctrine","@doctrine.orm.entity_manager"]
+    base.level_sql_filter_service:
+        class: BaseBundle\Service\LevelSqlFilterService
+        arguments: ["@service_container"]
+    base.enable_filter_listener:
+        class: BaseBundle\EventListener\EnableFilterListener
+        arguments: ["@doctrine.orm.entity_manager", "@security.token_storage"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest}
+    #base.pdf_view_listener:
+        #class: BaseBundle\EventListener\PdfViewListener
+        #arguments: ["@templating"]
+        #tags:
+        #    - { name: kernel.event_listener, event: kernel.view, method: preRender}
+    #base.twig.extension:
+        #class: BaseBundle\Twig\InformationListExtension
+        #arguments: ["@doctrine","@security.token_storage","@router","@request_stack"]
+        #tags:
+        #    - { name: twig.extension } 
+    base.twig.extension.common_extension:
+        class: BaseBundle\Twig\CommonExtension
+        tags:
+            - { name: twig.extension } 
+    base.access_db_service:
+        class: BaseBundle\Service\AccessDbService
+        arguments: ["%kernel.root_dir%"]
+    base.image_service:
+        class: BaseBundle\Service\ImageService
+        arguments: ["%kernel.root_dir%", "@image.handling"]
+    twig.extension.macro_extension:
+        class: BaseBundle\Twig\MacroExtension
+        arguments: ["@doctrine"]
+        tags:
+            - { name: twig.extension }
+    base.wechat_service:
+        class: BaseBundle\Service\WechatService
+        arguments: ["%uploads_directory%"]

@@ -1,0 +1,39 @@
+rbac_user:
+    path:     /
+    defaults: { _controller: RbacBundle:Default:index}
+rbac_user_webuser:
+    path:     /webuser
+    defaults: { _controller: RbacBundle:Default:webUser }
+rbac_user_new:
+    path:     /add
+    defaults: { _controller: RbacBundle:Default:new }
+rbac_user_personaldata:
+    path:     /personaldata
+    defaults: { _controller: RbacBundle:Default:personalData }
+rbac_user_delete:
+    path:     /del
+    defaults: { _controller: RbacBundle:Default:delete }
+rbac_user_edit:
+    path:     /edit
+    defaults: { _controller: RbacBundle:Default:edit }
+rbac_user_show:
+    path:     /show
+    defaults: { _controller: RbacBundle:Default:show }   
+rbac_role:
+    path:     /role
+    defaults: { _controller: RbacBundle:Role:index }
+rbac_role_new:
+    path:     /role/new
+    defaults: { _controller: RbacBundle:Role:new }
+rbac_role_set:
+    path:     /role/set
+    defaults: { _controller: RbacBundle:Role:set }
+rbac_role_show:
+    path:     /role/show
+    defaults: { _controller: RbacBundle:Role:show }
+rbac_role_edit:
+    path:     /role/edit
+    defaults: { _controller: RbacBundle:Role:edit }
+rbac_role_delete:
+    path:     /role/delete
+    defaults: { _controller: RbacBundle:Role:delete }
