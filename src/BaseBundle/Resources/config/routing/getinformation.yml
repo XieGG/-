@@ -1,7 +1,0 @@
-base_getinformation_searchJGBM:
-    path:     /searchJGBM
-    defaults: { _controller: "BaseBundle:GetInformation:searchJGBM" }
-
-base_getinformation_getArea:
-    path:     /getArea
-    defaults: { _controller: "BaseBundle:GetInformation:getArea" }    
