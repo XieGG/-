@@ -29,7 +29,7 @@ class CreateUserCommand extends ContainerAwareCommand
             $username = 'admin';
         }
         if(empty($password)){
-            $password = 'lcp0578';
+            $password = 'mqy2019';
         }
         $helper = $this->getHelper('question');
         $question = new ConfirmationQuestion('generate account username:'.$username.', password:'.$password.'?(enter yes|no)', false);
@@ -102,12 +102,6 @@ class CreateUserCommand extends ContainerAwareCommand
             $user->setGROUP($role);
             $user->setROLE('ROLE_ADMIN');
             $user->setSTATUS('1');
-//            $user->setJZJGSZDSSFJ('140100030101090001');
-//            $user->setJZJGSZDSSFJMC('太原市司法局');
-//            $user->setJZJGSZQXSFJ('140105040101010001');
-//            $user->setJZJGSZQXSFJMC('小店区司法局');
-//            $user->setJZJGSZSFS('140105050101010001');
-//            $user->setJZJGSZSFSMC('小店司法所');
             $em->persist($user);
             $em->flush();
         }catch (\Exception $e) {
