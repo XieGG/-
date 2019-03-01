@@ -40,10 +40,10 @@ security:
                 username_parameter: _username
                 password_parameter: _password
                 failure_path: auth_login_index
-#            logout:
+            logout:
 #                handlers: [rbac.logout_handler]
-#                path: admin_login_logout
-#                target: admin_login_index
+                path: auth_login_logout
+                target: auth_login_index
 
     access_control:
         - { path: ^/admin/auth/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
