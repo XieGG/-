@@ -1,0 +1,38 @@
+{% set route_name = app.request.get('_route') %}
+
+
+
+<!-- 中部开始 -->
+<!-- 左侧菜单开始 -->
+    <div class="left-nav">
+        <div id="side-nav">
+            <ul id="nav">
+                {% set menuPrimary = session_menu_list() %}
+                {% for menuPrimary in menuPrimary %}
+                    <li>
+                        <a href="javascript:;">
+                            <i class="iconfont">&#xe6b8;</i>
+                            <cite>{{ menuPrimary.name }}</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            {% set menuSub = session_menu_sidebar(menuPrimary.node) %}
+                            {% for menu in menuSub %}
+                                {% if menu.english_name is not empty %}
+                                    <li >
+                                        <a href="{{ path(menu.english_name) }}">
+                                            <i class="iconfont">&#xe6a7;</i>
+                                            <cite>{{ menu.name }}</cite>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+<!-- <div class="x-slide_left"></div> -->
+<!-- 左侧菜单结束 -->

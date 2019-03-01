@@ -2,6 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/SystemBundle" isTestSource="false" packagePrefix="SystemBundle\" />
       <sourceFolder url="file://$MODULE_DIR$/src/RbacBundle" isTestSource="false" packagePrefix="RbacBundle\" />
       <sourceFolder url="file://$MODULE_DIR$/src/AdminBundle" isTestSource="false" packagePrefix="AdminBundle\" />
       <sourceFolder url="file://$MODULE_DIR$/src/BaseBundle" isTestSource="false" packagePrefix="BaseBundle\" />

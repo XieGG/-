@@ -13,6 +13,12 @@ use SystemBundle\Entity\Menu;
 
 class MenuFixtures extends Fixture
 {
+    /**
+     *
+     * {@inheritdoc}
+     *
+     * @see \Doctrine\Common\DataFixtures\FixtureInterface::load()
+     */
     public function load(ObjectManager $manager)
     {
         $result = $this->truncateTable($manager);
