@@ -7,3 +7,6 @@ auth_login_index:
 auth_login_check:
     path:     /login/check
     defaults: { _controller: AuthBundle:Login:check }
+auth_login_logout:
+    path:     /login/logout
+    defaults: { _controller: AuthBundle:Login:logout }
