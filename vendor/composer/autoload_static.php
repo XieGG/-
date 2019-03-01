@@ -27,6 +27,7 @@ class ComposerStaticInitcf70a142d2d991d5797f59f6c1b4139d
         ),
         'S' => 
         array (
+            'SystemBundle\\' => 13,
             'Symfony\\Polyfill\\Util\\' => 22,
             'Symfony\\Polyfill\\Php70\\' => 23,
             'Symfony\\Polyfill\\Php56\\' => 23,
@@ -46,6 +47,10 @@ class ComposerStaticInitcf70a142d2d991d5797f59f6c1b4139d
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
             'SensioLabs\\Security\\' => 20,
+        ),
+        'R' => 
+        array (
+            'RbacBundle\\' => 11,
         ),
         'P' => 
         array (
@@ -79,12 +84,17 @@ class ComposerStaticInitcf70a142d2d991d5797f59f6c1b4139d
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\' => 16,
+            'Doctrine\\Bundle\\FixturesBundle\\' => 31,
             'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 36,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
         ),
         'C' => 
         array (
             'Composer\\CaBundle\\' => 18,
+        ),
+        'B' => 
+        array (
+            'BaseBundle\\' => 11,
         ),
         'A' => 
         array (
@@ -102,6 +112,10 @@ class ComposerStaticInitcf70a142d2d991d5797f59f6c1b4139d
         'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'SystemBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/SystemBundle',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -179,6 +193,10 @@ class ComposerStaticInitcf70a142d2d991d5797f59f6c1b4139d
         array (
             0 => __DIR__ . '/..' . '/sensiolabs/security-checker/SensioLabs/Security',
         ),
+        'RbacBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/RbacBundle',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -239,6 +257,10 @@ class ComposerStaticInitcf70a142d2d991d5797f59f6c1b4139d
         array (
             0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
         ),
+        'Doctrine\\Bundle\\FixturesBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle',
+        ),
         'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-cache-bundle',
@@ -250,6 +272,10 @@ class ComposerStaticInitcf70a142d2d991d5797f59f6c1b4139d
         'Composer\\CaBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
+        ),
+        'BaseBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/BaseBundle',
         ),
         'AuthBundle\\' => 
         array (
@@ -297,6 +323,10 @@ class ComposerStaticInitcf70a142d2d991d5797f59f6c1b4139d
             'Doctrine\\Common\\Inflector\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
+            'Doctrine\\Common\\DataFixtures' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/data-fixtures/lib',
             ),
             'Doctrine\\Common\\Collections\\' => 
             array (
