@@ -103,6 +103,28 @@ class MenuFixtures extends Fixture
         return $menu;
     }
 
+    /**
+     * 纯净服1.12.2板块
+     *
+     * @return string[][]|number[][]
+     */
+    private function getPureMenu()
+    {
+        $parentNode = 20000;
+        $menu = [
+            [
+                'name' => '纯净服1.12.2',
+                'english_name' => 'pure_homepage',
+                'parent_node' => $parentNode,
+                'level' => 2,
+                'status' => 1,
+                'active' => 1,
+                'node' => 20100 // 排序在父级的基础上增加
+            ],
+        ];
+        return $menu;
+    }
+
 
     /**
      *
@@ -131,10 +153,20 @@ class MenuFixtures extends Fixture
                 'icon' => 'icon-home',
                 'node' => 10000
             ],
+            [
+                'name' => '纯净生存端1.12.2',
+                'english_name' => 'pure_homepage',
+                'parent_node' => 1,
+                'level' => 1,
+                'status' => 1,
+                'active' => 1,
+                'icon' => 'icon-home',
+                'node' => 20000
+            ],
 
         ];
         // 菜单合并
-        $arr = array_merge($menu, $this->getAdminMenu());
+        $arr = array_merge($menu, $this->getAdminMenu(), $this->getPureMenu());
         return $arr;
     }
 }

@@ -1,0 +1,3 @@
+pure_homepage:
+    path:     /
+    defaults: { _controller: PureBundle:Default:index }

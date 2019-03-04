@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/SystemBundle" isTestSource="false" packagePrefix="SystemBundle\" />
       <sourceFolder url="file://$MODULE_DIR$/src/RbacBundle" isTestSource="false" packagePrefix="RbacBundle\" />
       <sourceFolder url="file://$MODULE_DIR$/src/AdminBundle" isTestSource="false" packagePrefix="AdminBundle\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/PureBundle" isTestSource="false" packagePrefix="PureBundle\" />
       <sourceFolder url="file://$MODULE_DIR$/src/BaseBundle" isTestSource="false" packagePrefix="BaseBundle\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/src/AuthBundle" isTestSource="false" packagePrefix="AuthBundle\" />

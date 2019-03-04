@@ -10,7 +10,8 @@
             "AdminBundle\\": "src/AdminBundle",
             "RbacBundle\\": "src/RbacBundle",
             "BaseBundle\\": "src/BaseBundle",
-            "SystemBundle\\": "src/SystemBundle"
+            "SystemBundle\\": "src/SystemBundle",
+            "PureBundle\\": "src/PureBundle"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },

@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Kit\FormBundle\KitFormBundle(),
             new Kit\CryptBundle\KitCryptBundle(),
             new SystemBundle\SystemBundle(),
+            new PureBundle\PureBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
