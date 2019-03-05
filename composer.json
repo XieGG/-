@@ -12,7 +12,8 @@
             "BaseBundle\\": "src/BaseBundle",
             "SystemBundle\\": "src/SystemBundle",
             "PureBundle\\": "src/PureBundle",
-            "WebBundle\\": "src/WebBundle"
+            "WebBundle\\": "src/WebBundle",
+            "ModBundle\\": "src/ModBundle"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },

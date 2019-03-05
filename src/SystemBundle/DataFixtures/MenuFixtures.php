@@ -125,6 +125,28 @@ class MenuFixtures extends Fixture
         return $menu;
     }
 
+    /**
+     * mod服板块
+     *
+     * @return string[][]|number[][]
+     */
+    private function getModMenu()
+    {
+        $parentNode = 30000;
+        $menu = [
+            [
+                'name' => 'Mod服',
+                'english_name' => 'mod_homepage',
+                'parent_node' => $parentNode,
+                'level' => 2,
+                'status' => 1,
+                'active' => 1,
+                'node' => 30100 // 排序在父级的基础上增加
+            ],
+        ];
+        return $menu;
+    }
+
 
     /**
      *
@@ -163,10 +185,20 @@ class MenuFixtures extends Fixture
                 'icon' => 'icon-home',
                 'node' => 20000
             ],
+            [
+                'name' => 'mod端',
+                'english_name' => 'mod_homepage',
+                'parent_node' => 1,
+                'level' => 1,
+                'status' => 1,
+                'active' => 1,
+                'icon' => 'icon-home',
+                'node' => 30000
+            ],
 
         ];
         // 菜单合并
-        $arr = array_merge($menu, $this->getAdminMenu(), $this->getPureMenu());
+        $arr = array_merge($menu, $this->getAdminMenu(), $this->getPureMenu(), $this->getModMenu());
         return $arr;
     }
 }

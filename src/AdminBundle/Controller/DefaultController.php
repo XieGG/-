@@ -11,7 +11,7 @@ class DefaultController extends Controller
     {
         $linfo = new \Linfo\Linfo();
         $parser = $linfo->getParser();
-        dump($parser->getRam());die;
+        dump($parser->getRam());
         return $this->render('@Admin/Default/index.html.twig');
     }
 }

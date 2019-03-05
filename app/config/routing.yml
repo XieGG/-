@@ -1,3 +1,7 @@
+mod:
+    resource: "@ModBundle/Resources/config/routing.yml"
+    prefix:   /admin/mod
+
 web:
     resource: "@WebBundle/Resources/config/routing.yml"
     prefix:   /
