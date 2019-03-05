@@ -11,7 +11,8 @@
             "RbacBundle\\": "src/RbacBundle",
             "BaseBundle\\": "src/BaseBundle",
             "SystemBundle\\": "src/SystemBundle",
-            "PureBundle\\": "src/PureBundle"
+            "PureBundle\\": "src/PureBundle",
+            "WebBundle\\": "src/WebBundle"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
