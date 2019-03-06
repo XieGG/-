@@ -26,7 +26,7 @@
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-fixtures-bundle": "^3.0",
         "doctrine/orm": "^2.5",
-        "incenteev/composer-parameter-handler": "^2.0",
+        "incenteev/composer-parameter-handler": "^2.1",
         "kitlabs/kit-crypt-bundle": "^0.1.2",
         "kitlabs/kit-form-bundle": "^0.1.3",
         "kitlabs/kit-generator-bundle": "^0.4.3",
