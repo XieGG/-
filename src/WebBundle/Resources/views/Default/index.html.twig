@@ -1,1 +1,50 @@
-前端页面
+{% extends 'Home/base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('home/css/home.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="main-content">
+        <h2>关于我们</h2>
+        <p class="about-text">
+            MyServer is a revolutionary Minecraft server. We offer awesome custom gamemodes and we have been around for over 2 years now. What started off as a small community minecraft server has developed into something we couldn't even imagine.<br><br>You can join our server with the IP play.myserver.net
+        </p>
+    </div>
+
+    <div class="gradient">
+        <div class="flex-container">
+            <div class="split">
+                <a href="#"><img class="img" src="{{ asset('home/img/forums.png') }}" alt="Image of Forums icon"></a>
+                <p> 敬请期待......... </p>
+            </div>
+            <div class="split">
+                <a href="#"><img class="img" src="{{ asset('home/img/store.png') }}" alt="Image of Store icon"></a>
+                <p> 赞助 </p>
+            </div>
+            <div class="split">
+                <a href="#vote-section"><img class="img" src="{{ asset('home/img/vote.png') }}" alt="Image of Voting icon"></a>
+                <p> XXX </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="vote-section">
+        <h2>服务器列表</h2>
+        <p>服务器列表介绍</p>
+        <div class="vote-container">
+            <div class="vote">
+                <h2>纯净服</h2>
+                <a href="#"><button class="vote-btn">Download</button></a>
+            </div>
+            <div class="vote">
+                <h2>RPG服</h2>
+                <a href="#"><button class="vote-btn">Download</button></a>
+            </div>
+            <div class="vote">
+                <h2>Mod服</h2>
+                <a href="#"><button class="vote-btn">Download</button></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

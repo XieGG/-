@@ -1,0 +1,79 @@
+{% extends 'Home/base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('home/css/staff.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="main-content">
+        <div class="about-staff">
+            <div class="abt-epr">
+                <h1 class="fade">The Staff Team</h1>
+                <p>The staff team of MyServer is experienced, professional, and here to give you the best experience on our server. The two owners are BlexieKing and Bae4lyfe; they're dedicated to giving you the best time on the server as possible. The owners work closely with the rest of the staff team. You'll see us online and can join with the IP "play.myserver.net".</p>
+            </div>
+            <div class="prev-epr">
+                <h2>Our Skills</h2>
+
+                <div class="meter-container">
+                    <p>Staff Management</p>
+                    <div class="meter ma">
+                        <div class="skills">78%</div>
+                    </div>
+                </div>
+                <div class="meter-container">
+                    <p>Java Development</p>
+                    <div class="meter mb">
+                        <div class="skills">96%</div>
+                    </div>
+                </div>
+                <div class="meter-container">
+                    <p>Web Development</p>
+                    <div class="meter mc">
+                        <div class="skills">98%</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="staff">
+        <h2>Our Team</h2>
+        <div class="staff-team">
+            <div>
+                <h3>BlexieKing</h3>
+                <div class="owner">Owner</div>
+                <img src="{{ asset('home/img/blexieking.png') }}">
+            </div>
+
+            <div>
+                <h3>Bae4lyfe</h3>
+                <div class="owner">Owner</div>
+                <img src="{{ asset('home/img/bae4lyfe.png') }}">
+            </div>
+
+            <div>
+                <h3>TheSlimyBro</h3>
+                <div class="manager">Manager</div>
+                <img src="{{ asset('home/img/theslimybro.png') }}">
+            </div>
+
+            <div>
+                <h3>Ryjay</h3>
+                <div class="admin">Admin</div>
+                <img src="{{ asset('home/img/ryjay.png') }}">
+            </div>
+
+            <div>
+                <h3>LeanAndRekt</h3>
+                <div class="admin">Admin</div>
+                <img src="{{ asset('home/img/leanandrekt.png') }}">
+            </div>
+
+            <div>
+                <h3>LeanAndRekt</h3>
+                <div class="admin">Admin</div>
+                <img src="{{ asset('home/img/leanandrekt.png') }}">
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
