@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}MineCraft-纯净服务器{% endblock %}</title>
+    <title>{% block title %}MineCraft-{{ minecraft_name }}纯净服务器{% endblock %}</title>
     {% block stylesheets %}
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('home/css/stylesheet.css') }}">
@@ -19,7 +19,7 @@
             <div class="logo">
                 <!-- In the img folder, upload your logo. -->
                 <!-- Make sure to name it 'logo.png'! -->
-                <a href="/"><img src="{{ asset('home/img/logo.png') }}" alt="MyServer logo"></a>
+                <a href="/"><img src="{{ asset('home/img/logo.png') }}" alt="{{ minecraft_name }}Logo"></a>
             </div>
 
             <ul class="nav">
@@ -30,7 +30,7 @@
             </ul>
         </div>
         {% if app.request.get('_route') != 'web_staff_index' %}
-            <h1 class="animate">欢迎来到梦起源服务器！</h1>
+            <h1 class="animate">欢迎来到{{ minecraft_name }}服务器！</h1>
             <div class="playercount">
                 <!-- Replace play.myserver.net with your IP address! -->
                 <!-- Make sure to do it for both examples below. -->

@@ -147,6 +147,28 @@ class MenuFixtures extends Fixture
         return $menu;
     }
 
+    /**
+     * 系统设置
+     *
+     * @return string[][]|number[][]
+     */
+    private function getSystemMenu()
+    {
+        $parentNode = 40000;
+        $menu = [
+            [
+                'name' => '网站基础信息设置',
+                'english_name' => 'system_homepage',
+                'parent_node' => $parentNode,
+                'level' => 2,
+                'status' => 1,
+                'active' => 1,
+                'node' => 40100 // 排序在父级的基础上增加
+            ],
+        ];
+        return $menu;
+    }
+
 
     /**
      *
@@ -195,10 +217,20 @@ class MenuFixtures extends Fixture
                 'icon' => 'icon-home',
                 'node' => 30000
             ],
+            [
+                'name' => '系统设置',
+                'english_name' => 'system_homepage',
+                'parent_node' => 1,
+                'level' => 1,
+                'status' => 1,
+                'active' => 1,
+                'icon' => 'icon-home',
+                'node' => 40000
+            ],
 
         ];
         // 菜单合并
-        $arr = array_merge($menu, $this->getAdminMenu(), $this->getPureMenu(), $this->getModMenu());
+        $arr = array_merge($menu, $this->getAdminMenu(), $this->getPureMenu(), $this->getModMenu(), $this->getSystemMenu());
         return $arr;
     }
 }
