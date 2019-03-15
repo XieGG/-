@@ -1,3 +1,7 @@
+system_webinfo_index:
+    path:     /webinfo
+    defaults: { _controller: SystemBundle:WebInfo:index }
+
 system_homepage:
     path:     /
     defaults: { _controller: SystemBundle:Default:index }

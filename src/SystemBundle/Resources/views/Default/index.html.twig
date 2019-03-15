@@ -1,1 +1,30 @@
-Hello World!
+{% extends 'base.html.twig' %}
+{% block body %}
+    <form class="layui-form" method="post" action="" enctype="multipart/form-data">
+        <div class="layui-form-item">
+            <label class="layui-form-label">网站标题</label>
+            <div class="layui-input-block">
+                <input type="text" value="{{ webinfo.title|default('') }}" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">网站logo</label>
+            当前logo：
+            {% if webinfo.logo is defined and webinfo.logo is not empty%}
+            <img src="1" />
+            {% else %}
+            暂无
+            {% endif %}
+            <input type="file" name="file">
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
