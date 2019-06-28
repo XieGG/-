@@ -10,7 +10,7 @@ namespace SystemBundle\Repository;
 class WebInfoRepository extends \Doctrine\ORM\EntityRepository
 {
 
-    public function getAll(){
+    public function getFindInfo(){
         $result = $this->createQueryBuilder('a')
             ->getQuery()->getOneOrNullResult();
         return $result;

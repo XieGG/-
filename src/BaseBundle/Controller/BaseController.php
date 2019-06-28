@@ -231,4 +231,24 @@ class BaseController extends Controller
             ]);
         }
     }
+
+    /**
+     * 非ajax上传(form表单文件上传)
+     * @param $file request获取的文件
+     * @param $mimeType 文件的类型
+     * @param $size 文件的大小
+     * @return $fileName 返回格式："/web/uploadsc27b38f98560d8d8175aac1d12eb0289.jpeg"
+     */
+    public function formUploadFile($file,$mimeType,$size,$DirName)
+    {
+        if($file->getSize() > $size){
+            echo '文件大小不匹配';die;
+        }
+        if(!in_array($file->getMimeType(),$mimeType)){
+            echo '文件后缀不匹配';die;
+        }
+        $fileName = $this->get('base.uploadFile')->upload($file,$DirName);
+
+        return $fileName;
+    }
 }

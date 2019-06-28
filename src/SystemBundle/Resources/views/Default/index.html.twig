@@ -11,7 +11,7 @@
             <label class="layui-form-label">网站logo</label>
             当前logo：
             {% if webinfo.logo is defined and webinfo.logo is not empty%}
-            <img src="1" />
+            <img style="width: 100px;height: 100px;" src="{{ webinfo.logo }}" />
             {% else %}
             暂无
             {% endif %}

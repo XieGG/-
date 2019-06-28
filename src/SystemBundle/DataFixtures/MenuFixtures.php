@@ -158,7 +158,7 @@ class MenuFixtures extends Fixture
         $menu = [
             [
                 'name' => '网站基础信息设置',
-                'english_name' => 'system_homepage',
+                'english_name' => 'system_webinfo_index',
                 'parent_node' => $parentNode,
                 'level' => 2,
                 'status' => 1,

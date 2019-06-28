@@ -1,4 +1,4 @@
 services:
-#    base.example:
-#        class: BaseBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    base.uploadFile:
+        class: BaseBundle\Service\UploadFile
+        arguments: ['%uploads_directory%']

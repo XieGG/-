@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="web_info", options={"comment"="网站基础信息配置"})
  * @ORM\Entity(repositoryClass="SystemBundle\Repository\WebInfoRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class WebInfo
 {
@@ -154,6 +155,25 @@ class WebInfo
     public function getUpdateAt()
     {
         return $this->updateAt;
+    }
+
+    /**
+     * @ORM\PrePersist()
+     */
+    public function prePersist()
+    {
+        if($this->getCreateAt() == null){
+            $this->setCreateAt(new \DateTime());
+        }
+        $this->setUpdateAt(new \DateTime());
+    }
+
+    /**
+     * @ORM\PreUpdate()
+     */
+    public function preUpdate()
+    {
+        $this->setUpdateAt(new \DateTime());
     }
 }
 

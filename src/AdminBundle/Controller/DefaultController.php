@@ -9,9 +9,12 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        $linfo = new \Linfo\Linfo();
-        $parser = $linfo->getParser();
-        dump($parser->getRam());
+        /*
+         * 先注释掉了. 在linux上在放开. win下开发禁止使用Linfo。
+         */
+//        $linfo = new \Linfo\Linfo();
+//        $parser = $linfo->getParser();
+//        dump($parser->getRam());
         return $this->render('@Admin/Default/index.html.twig');
     }
 }
