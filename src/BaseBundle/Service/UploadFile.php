@@ -16,6 +16,7 @@ class UploadFile
     {
         $fileName = md5(uniqid()).'.'.$file->guessExtension();
         $file->move($this->targetDir."/{$DirName}",$fileName);
-        return '/uploads/'.$DirName.'/'.$fileName;
+        $saveUrl = '/uploads/'.$DirName.'/'.$fileName;
+        return $saveUrl;
     }
 }

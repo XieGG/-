@@ -32,7 +32,7 @@ class WebInfo
     /**
      * @var string
      *
-     * @ORM\Column(name="logo", type="string", length=50, options={"comment":"网站logo"})
+     * @ORM\Column(name="logo", type="string", length=100, options={"comment":"网站logo"})
      */
     private $logo;
 

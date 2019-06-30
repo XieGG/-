@@ -13,6 +13,9 @@ class WebInfoController extends BaseController
         $em = $this->getDoctrine()->getManager();
         $webInfo = $em->getRepository('SystemBundle:WebInfo');
         $webInfoResult = $webInfo->getFindInfo();
+        if(empty($webInfoResult)){
+            $webInfoResult = new WebInfo();
+        }
         //表单提交
         if($request->getMethod() == 'POST'){
             $webtitle = $request->request->get('title');
